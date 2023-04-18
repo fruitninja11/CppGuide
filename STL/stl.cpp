@@ -129,6 +129,21 @@ void defineVector()
     
 }
 
+
+//List
+void definelist()
+{
+    list<int> ls;
+
+    ls.push_back(2); //{2}
+    ls.emplace_back(3); //{2,3}
+    ls.push_front(5); //{5,2,3}
+    ls.emplace_front(); //{2,3}
+
+    //other function same as vector
+    //insert in a vector is costlier than list, since list does an internal operation
+    //doubly linked list is maintained for a list whereas for a vecor single linked list is maintained
+}
 int main()
 {
     definePair();
