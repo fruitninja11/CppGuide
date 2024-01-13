@@ -49,11 +49,11 @@ int main()
     
     try
     {
-        DerivedB &ref = dynamic_cast<DerivedB&>(d1);
+        //DerivedB &ref = dynamic_cast<DerivedB&>(d1);
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        //std::cerr << e.what() << '\n';
         //cout << e.what() << endl;
     }
     

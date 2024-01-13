@@ -11,7 +11,7 @@ private:
     int var_A;
 public:
     Base(/* args */){};
-    //explicit Base(int var) : var_A(var) {}   // explicit keyword is usedto staop the implicit calling of constructors //code won't compile
+    //explicit Base(int var) : var_A(var) {}   // explicit keyword is usedto stop the implicit calling of constructors //code won't compile
     Base(int var) : var_A(var) {}
     void print()
     {

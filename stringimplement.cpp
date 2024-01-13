@@ -34,7 +34,7 @@ public:
     String& operator=(const String &obj)
     {
         if (this != &obj)
-        {
+        { 
             /* check if someone has not done str3 = str3 */
             // it means str3 already has some resource
             delete[] res; //delete[] to deallocate the memory of previously occupied resource , [] used since its an array 

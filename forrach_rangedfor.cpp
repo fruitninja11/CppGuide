@@ -11,6 +11,8 @@ int main(){
 
     vector<int> vec;
 
+    vector<double> v(10, 11.0);
+
     for (int i = 0; i < 5; i++)
     {
         vec.push_back(i);
