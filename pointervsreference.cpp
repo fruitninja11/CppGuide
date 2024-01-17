@@ -33,7 +33,7 @@ int main()
 
 //when to use pointer
 /*
-used in algoritms and data strucutres like linked-list, tree, graph
+used in algoritms and data structures like linked-list, tree, graph
 cause we can put NULL or nullptr
 sometimes we use pointers to point to some other node or variable
 */
