@@ -3,7 +3,7 @@
 // what over allocation does is it creates an array with extra word size 
 // creates an array with over allocation and then the pointer of object (bp) is pointed to
 // the start of memory where object starts storing
-//uses placement new operatorS
+//uses "placement new" operators
 //and this will hold the size of n (size of array (hre array of objects))
 // 
 
