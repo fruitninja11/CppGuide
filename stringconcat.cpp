@@ -19,9 +19,9 @@ char* strconcat(char* dest, const char* source){
 
 int main()
 {
-    char dest[20] = "Ninja";
-    const char* source = "Fruit";
+    char dest[20] = "world !";
+    const char* source = "Hello";
     strconcat(dest, source);
-    cout << "Concat string = " << dest;
+    cout << "Concat string is " << dest;
     return 0;
 }
