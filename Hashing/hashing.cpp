@@ -11,7 +11,15 @@ increase the count. and then do it for every query. so time required will be no.
 so if the number of queries and size of the array both increase then the time consumed will be a lot more. so we introduce hashmap here.
 
 so here hashing comes in -> prestroring and then fetching.
+saves a lot of time;
+
+now in case of integers we have to take care about sizes. here we took a hash of 15 for more sizes
+i.e. 10^9 in such cases segfault occurs if we declare that in main;
+so in the main function upto 10^6 is allowed but beyond that is not(tested in the code)
+so in case of values above 10^6 lets say 10^7 we have to declare it globally;
 */
+
+int hashh[10000000]; //no zero is initialized since global values are initialized to 0
 
 int main()
 {
@@ -20,7 +28,7 @@ int main()
     //so we have the input array now we precompute it in another array called hash
 
     //precompute
-    int hash[15] = {0}; //init every count to 0
+    int hash[1000000] = {0}; //init every count to 0
     for (int i = 0; i < 10; i++)
     {
         hash[inp_arr[i]]+=1;
