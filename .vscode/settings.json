@@ -3,6 +3,8 @@
         "thread": "cpp",
         "iostream": "cpp",
         "iosfwd": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "unordered_map": "cpp",
+        "ostream": "cpp"
     }
 }
