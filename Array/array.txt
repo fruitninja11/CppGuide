@@ -1,0 +1,5 @@
+Data structure of similar elements.
+Max size for declaring array 
+inside main -> 10^6
+globally -> 10^7
+
