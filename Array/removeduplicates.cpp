@@ -21,6 +21,7 @@ time complexity : N
 #include<bits/stdc++.h>
 using namespace std;
 
+//optimal method
 int removeDuplicates(int arr[], int n)
 {
     int i=0,j;
