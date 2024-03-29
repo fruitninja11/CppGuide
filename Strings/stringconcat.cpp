@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-char* strconcat(char* dest, const char* source){
+char* strconcat(char* dest, char* source){
     
     while (*dest)
     {
@@ -13,14 +13,14 @@ char* strconcat(char* dest, const char* source){
         *dest++ = *source++;
     }
     *dest = '\0';
-    
+    return dest;
 }
 
 
 int main()
 {
-    char dest[20] = "world !";
-    const char* source = "Hello";
+    char dest[20] = "Hello";
+    char source[20]= " world !";
     strconcat(dest, source);
     cout << "Concat string is " << dest;
     return 0;
