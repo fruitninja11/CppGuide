@@ -66,6 +66,48 @@ int fun_optimal(vector<int> vec, int k)
     return maxlen;
 }
 
+// better for arrays with positive integers and negative integers and zeroes
+// optimal method for arrays with positive, negative integers
+// Time Complexity : O(2n)
+
+int fun_better(vector<int> vec, int k)
+{
+    map<int , int> preSumMap;
+    int sum = 0;
+    int maxLen = 0;
+
+    for (int i = 0; i < vec.size(); i++)
+    {
+        sum += vec[i];
+
+        if(k == sum)
+        {
+            maxLen = max(maxLen,i+1);
+        }
+
+        int rem = sum - k;  
+        if(preSumMap.find(rem) != preSumMap.end())
+        {
+            int len = i - preSumMap[rem];
+            maxLen = max(maxLen,len);
+        }
+
+        // consider the edge case ex: {2,0,0,3}
+        // if we dont use if condition,the answer will be maxLen=1
+        // but it should be considered 3 {0,0,3}
+        // so before puttin sum in map we should check 
+        //if its already present or not
+
+
+        if(preSumMap.find(sum) == preSumMap.end())
+        {
+            preSumMap[sum] = i;
+        }
+    }
+
+    return maxLen;    
+}
+
 int main()
 {
     int k = 3;
