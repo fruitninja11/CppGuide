@@ -18,6 +18,8 @@ void passbyvaluestring( string s)
     cout << s << endl;
 }
 
+//pass by reference
+//sending actual data function
 void passbyreference(int &num){
     cout<< num << endl;
     num+= 5;
