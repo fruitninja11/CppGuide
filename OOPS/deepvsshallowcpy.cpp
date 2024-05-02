@@ -26,50 +26,63 @@ using namespace std;
 class Student
 {
 private:
-    int *ptr;
+    char *name;
     int age;
 
 public:
-    Student():ptr(new int(0)),age(0){};
+    Student():name(nullptr),age(0){};
 
-    Student(int ptr1, int age1)
+    Student(const char* ptr1, int age1)
     {
-        ptr = new int(ptr1);
-        age = age1;
-    }
+        this->name = new char(strlen(ptr1)+1); //+1 for null character
+        strcpy(this->name,ptr1); // Copy ptr1 into name
 
-    void setPtr(int ptr1){
-        *ptr = ptr1;
-    }
-
-    void setage(int age1){
         age = age1;
-    }
-    void display()
-    {
-        cout << *ptr << " -> " << age << endl;
     }
 
     //copy constructor
     Student(const Student &obj)
     {   
-        ptr = new int;
-        *ptr = *obj.ptr;
+        this->name = new char(strlen(obj.name)+1); //+1 for null character
+        strcpy(this->name,obj.name); // Copy obj.name into name
         age = obj.age;
     }
-    ~Student(){
-        cout << "dest" << endl;
-    };
+
+    // Destructor
+    ~Student() {
+        if (name != nullptr) // Check if name is not null
+            delete[] name; // Free the dynamically allocated memory for name
+        cout << "Destructor called" << endl;
+    }
+
+     // Display Function
+    void display() {
+        cout << name << " -> " << age << endl;
+    }
+
+    // Setter for name
+    void setName(const char* ptr1) {
+        if (this->name != nullptr) // Free existing memory if any
+            delete[] this->name;
+        this->name = new char[strlen(ptr1) + 1]; // Allocate memory for name
+        strcpy(name, ptr1); // Copy ptr1 into name
+    }
+
+    // Setter for age
+    void setAge(int age1) {
+        age = age1;
+    }
+
 };
 
 
 int main()
 {
-    Student s1(10,20);
+    Student s1("Shubham",20);
     Student s2 = s1;
     s1.display();
     s2.display();
-    s2.setPtr(20);
+    s2.setName("Gaurav");
     s1.display();
     s2.display();
 
