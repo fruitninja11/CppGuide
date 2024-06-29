@@ -34,7 +34,7 @@ class Base{
         now infinite loop will be created
 
         but when i send an object by reference it sends the actual object (obj1)
-        so same memory is referenced bt obj1 and temp
+        so same memory is referenced by obj1 and temp
 
     */
     Base (Base& tempobj)
