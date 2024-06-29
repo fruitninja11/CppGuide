@@ -1,17 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool isPalindrome(string s)
+bool isPalindrome(char s[], int length)
 {
-    int left =0, right = s.length()-1;
+    int left =0, right = length-1;
     while(left<right)
     {
-        if(s[left]!=s[right])
+        if(s[left++]!=s[right--])
         {
             return false;
         }
-        left++;
-        right--;
     }
     return true;
 }
@@ -19,8 +17,10 @@ bool isPalindrome(string s)
 
 int main(int argc, char const *argv[])
 {
-    string str1= "abcdfcba";
-    if(isPalindrome(str1))
+    char str1[]= "abcdcba";
+    int length = strlen(str1);
+
+    if(isPalindrome(str1,length))
         cout<<"Palindrome";
     else
         cout << "Not palindrome";

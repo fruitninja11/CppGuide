@@ -3,12 +3,14 @@ using namespace std;
 
 char* stringcopy(char* destn, const char* source)
 {
+    char* originalDestn = destn; // Store the original destination pointer
+    
     while (*source != '\0')
     {
-        *destn ++ = *source ++;
+        *destn++ = *source++;
     }
-    ++*destn = '\0';
-    return destn;
+    *destn = '\0'; // Correctly place the null terminator
+    return originalDestn; // Return the original destination pointer
 }
 
 int main()
