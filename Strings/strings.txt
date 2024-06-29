@@ -1,0 +1,3 @@
+Strings are 1d character arrays.
+Strings end with a null character '\0'
+While taking input using cin >> if input has space, tab (\t) or new line(\n) the input execution stops
