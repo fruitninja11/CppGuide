@@ -1,3 +1,15 @@
+String is a class. And variables of string are objects of string class.
+
+String vs Char arrays
+Memory:
+Strings: Run time memory allocation
+Char arrays: we have to give a size of array, compile time memory allocation. 
+char arrays have static memory allocation.
+
+Implementation:
+string are slower in access
+char arrays are faster in access
+
 Strings are 1d character arrays.
 Strings end with a null character '\0'
 While taking input using cin >> if input has space, tab (\t) or new line(\n) the input execution stops
