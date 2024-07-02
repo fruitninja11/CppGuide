@@ -1,0 +1,48 @@
+Command in linux to see all the files
+just use --save-temps while running
+
+
+------------------------------------------------------
+Compiler has 
+1. linker
+Links all the library files and makes an Executable.
+
+2.Loader
+loads the Executable in the ready queue in memory
+code starts to run
+
+
+[source code] code.cpp -------> Compiler -------> [Object Code]---*
+                                                                  |
+[source code] code.cpp -------> Compiler -------> [Object Code]---*-----> Linker ----> [Executable] ------> Loader ------> [Running Executable in the memory]
+                                                                  |
+[source code] code.cpp -------> Compiler -------> [Object Code]---*
+
+-----------------------------------------------------
+
+
+                                            Editor or IDE (write source code)
+                                            |
+        (.cpp, .h) Source and header files  |
+                                            |
+                                            Pre Processor (removes comments and other symbols)
+                                            |
+     (*.i) Included files, replaced symbols |
+                                            |
+                                            Compiler (tokeniser, lexical analyzer, semantic analyzer, creates syntax tree )
+                                            |
+                      (*.s) assembly code   |
+                                            |
+                                            Assembler
+                                            |
+                        (*.o) Object code   |
+                                            |
+                                            Linker <-------------Static Libraries(.lib,.a)
+                                            |
+                                            |
+                                            |
+                                            Loader <-------------Dynamic Libraries(.dll, .so)
+                                            |
+                                            |
+                                            |
+                                            Operating System

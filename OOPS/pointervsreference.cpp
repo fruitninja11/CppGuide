@@ -16,7 +16,7 @@ int main()
 
 //-----------------------------------------
 //memory address : refrence dosnt have its own address, pointer has
-// reassignment is not possible in reference
+// reassignment is not possible in reference it is tightly bound 
 // reference cannot be NULL(empty), pointer can be
 // Arithmatic Operations are not possible in reference
 

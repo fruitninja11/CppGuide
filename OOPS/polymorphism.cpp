@@ -1,3 +1,15 @@
+/*
+Polymorphism
+
+Compile time polymorphism (static binding / early binding)
+1. function overloading
+2. operator overloading
+
+Runtime polymorphism (dynamic binding / lazy binding)
+function overriding (using virtual functions)
+
+*/
+
 #include <iostream>
 
 // Base class
