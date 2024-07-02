@@ -62,3 +62,26 @@ When calling printType on shape, it prints the type as if it were a Shape object
 Object slicing can lead to unexpected behavior, and it's important to be aware of it when working with polymorphic objects and inheritance. 
 To avoid slicing, you can use pointers or references to the base class instead of objects, or use techniques like virtual functions and polymorphism to preserve the derived class information.
 */
+
+
+/*
+more simple example is
+
+class base
+{
+int var1;
+//some method
+}
+
+class derived : public base
+{
+int var2;
+//some method;
+}
+
+now object of derived class will have memory for var2 and var1 also from base class
+now,
+base baseobj = derivedobj;
+this operation will cause object slicing since base obj has memory for var1 only and var2 gets sliced;
+
+*/
