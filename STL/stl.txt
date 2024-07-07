@@ -1,0 +1,5 @@
+STL : Standard Template Libraries
+It consists of three components
+1. Container
+2. Iterator
+3. Algorithm

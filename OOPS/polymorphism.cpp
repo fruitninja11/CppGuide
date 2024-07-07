@@ -127,7 +127,7 @@ int main() {
     // Calling the overridden function
     Base* b = &d1;
     b->show();           // Calls Derived::show()
-
+    
     // Directly calling functions from the Derived class object
     d1.display();         // Calls Base::display()
     d1.display(5);        // Calls Base::display(int)
