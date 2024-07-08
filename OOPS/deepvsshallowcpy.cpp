@@ -2,10 +2,17 @@
 #include<string.h>
 using namespace std;
 
-//deep copy vs shallow copy 
-// when should we use compiler's copy constructor or our own copy constructor?
-// compiler's copy assignment operator or our own copy assignment operator
+/*deep copy vs shallow copy 
+ when should we use compiler's copy constructor or our own copy constructor?
+ compiler's copy assignment operator or our own copy assignment operator.
 
+ why do we pass the refrence of the object in copy constructor?
+ when we pass an object to the function by value, 
+ the function recieves the copy of the object rather than original object
+ this means that function can modify the copy without changing the original one.
+ and in this process to create copy it will call copy constructor, and if we dont 
+ pass it by reference it will cause infinite loop. 
+*/
 /*
 -------------------------|
 |   b1.age =20           |

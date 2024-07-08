@@ -21,7 +21,7 @@ int** get2darray(int rows, int cols)
     for ( i = 0; i < rows; i++)
     {
         arr[i] = new int[cols];        
-        for (int j = 0; j < rows; j++)
+        for (int j = 0; j < cols; j++)
         {
             arr[i][j] = i+j;
         }   
