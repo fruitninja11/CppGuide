@@ -23,6 +23,8 @@ struct Tree
     int value;
     Tree* left;
     Tree* right;
+
+    //Tree(int value) : value(value), left(nullptr), right(nullptr) {}
 };
 
 
