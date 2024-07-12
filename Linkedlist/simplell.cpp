@@ -54,7 +54,68 @@ public:
         
     } */
 
-    ~LinkedList();
+
+    void deleteNode(int offset)
+    {
+        //find if the entered offset is valid
+        int length=0;
+        while (head != nullptr)
+        {
+            head = head->next ;
+            length++;
+        }
+        
+        //if entered offset is greater than length
+        if(offset > length)
+        {
+            cout << "Index out of range" << endl;
+            return;
+        }
+
+        Node *temp = head;
+        //if offset is first element
+        if(offset == 1)
+        {
+            head = head->next;
+            delete temp;
+            return;
+        }
+
+        Node *prev = head;
+        //we have to traverse list so that we can got to that index
+        int i =0;
+
+        //until we reach that offset store previous address in prev
+        while (i != offset)
+        {
+            prev = temp;
+            temp = temp->next;
+            i++;
+        }
+
+        //after this loop we have reached the node we want to delete
+        // now store the address of next in prev of next;
+        prev->next = temp->next;
+
+        //delete the current holding node of a
+
+        delete temp;
+        
+    }
+
+
+    void insertPos(int pos)
+    {
+        Node *newnode = new Node;
+
+        if(pos == 1)
+        {
+            newnode->next = head;
+            head = newnode;
+        }
+    }
+
+    ~LinkedList(){};
 };
 
 
