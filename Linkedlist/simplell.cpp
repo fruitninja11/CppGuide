@@ -27,7 +27,7 @@ public:
     //Default Constructor
     LinkedList():head(nullptr){};
 
-    //insert node at the end of Linkedlist
+    /* //insert node at the end of Linkedlist
     void insertNode(int data)
     {
         //create new node
@@ -52,7 +52,7 @@ public:
         //now enter the new node to its next
         temp->next = newNode;
         
-    }
+    } */
 
     ~LinkedList();
 };
