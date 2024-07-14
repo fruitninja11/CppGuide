@@ -55,9 +55,18 @@ public:
     //copy constructor
     String (const String& obj)
     {
-        length = obj.length;
-        str = new char[length+1];
-        strcpy(str,obj.str);
+        //added if else for segmentation fault
+        if (obj.str)
+        {
+            length = obj.length;
+            str = new char[length+1];
+            strcpy(str,obj.str);
+        }
+        else
+        {
+            str = nullptr;
+        }
+        
     }
 
     //copy assignement operator
@@ -85,8 +94,8 @@ public:
 
     // Friend function for output & input operator
     //since we want to access str which is private
-    friend ostream& operator<<(ostream& out,const String& obj);
-    friend istream& operator>>(istream& out, const String& obj);
+    friend ostream& operator<<(ostream& arg1,const String& arg2);
+    friend istream& operator>>(istream& out, String& obj);
     
     //destructor
     ~String()
@@ -119,9 +128,14 @@ ostream& operator<<(ostream& out, const String& obj)
 
 //global function and not called by anyone 
 // here '>>' takes cin and s1 as parameters
-istream& operator>>(istream& in, const String& obj)
+istream& operator>>(istream& in, String& obj)
 {
-    in >> obj.str;
+    char temp[100];
+    in >> temp;
+    delete[] obj.str;
+    obj.length = strlen(temp);
+    obj.str = new char[obj.length + 1];
+    strcpy(obj.str, temp);
     return in;
 }
 
@@ -134,6 +148,7 @@ int main()
     s3 = s2; //copy assignment operator
     cout << s2; //overloading << operator
     cin >> s3;  //overloading >> operator
+    cout << s3;
     String s5 = move(s2); //move constructor --03
     return 0;
 }
