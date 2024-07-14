@@ -19,6 +19,7 @@ public:
     
     
     TreeNode(int val):value(val),left(nullptr),right(nullptr){};
+
     ~TreeNode(){
         delete left;
         delete right;
@@ -82,6 +83,44 @@ private:
         }
     }
 
+    void printleftview(TreeNode *node)
+    {
+        if(node != nullptr)
+        {
+            cout << node->value << endl;
+            printleftview(node->left);
+        }
+    }
+
+    void printrightview(TreeNode *node)
+    {
+        if(node != nullptr)
+        {
+            cout << node->value << endl;
+            printrightview(node->right);
+        }
+    }
+
+    bool searchNode(TreeNode *node , int key)
+    {
+        if(node == nullptr)
+            return false;
+        
+        if(key < node->value)
+        {
+            return searchNode(node->left,key);
+        }
+        else if(key > node->value)
+        {
+            return searchNode(node->right,key);
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+
 public:
 
     BST():node(nullptr){}
@@ -102,6 +141,28 @@ public:
         inorder(node);
     }
 
+    void printleftside()
+    {
+        printleftview(node);
+    }
+
+    void printrightside()
+    {
+        printrightview(node);
+    }
+
+    void search(int key)
+    {
+        if (searchNode(node,key))
+        {
+            cout << " Key Present" << endl;
+        }
+        else{
+            cout << " Key Not Present" << endl;
+        }
+        
+    }
+
 };
 
 
@@ -116,9 +177,9 @@ int main()
     tree.insert(30);
     tree.insert(25);
     tree.insert(40);
-
-    
-    tree.inorder();
-
+    //tree.inorder();
+    //tree.printleftside();
+    //tree.printrightside();
+    tree.search(232);
     return 0;
 }
