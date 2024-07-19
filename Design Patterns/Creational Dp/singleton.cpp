@@ -90,7 +90,7 @@ Global Access: Provides a single global point of access to the instance of the c
 Lazy Initialization: The instance is created only when getInstance() is called for the first time, promoting efficient memory usage.
 Thread Safety: Can be enhanced to support thread-safe initialization in multithreaded environments.
 
-*/ `
+*/ 
 
 
 
@@ -101,7 +101,7 @@ class Singleton {
 private:
     // Private constructor to prevent instantiation from outside the class
     Singleton() {
-        cout << "Singleton instance created." << endl;
+        std::cout << "Singleton instance created." << std::endl;
     }
 
     // Delete copy constructor and assignment operator
