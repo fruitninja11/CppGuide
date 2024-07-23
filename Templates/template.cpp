@@ -28,7 +28,7 @@ int main()
     std::cout << getMaximum(num1, num2) << std::endl;
 
     //since in char the fuction will return ascii value the value needs to be typcasted
-    std::cout << getMaximum<char>(num1, num2) << std::endl;
+    std::cout << getMaximum(ch1, ch2) << std::endl;
     
     return 0;
 }
