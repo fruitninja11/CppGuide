@@ -23,6 +23,7 @@ int main()
 
     mpp.insert(make_pair(3,"Cat"));
     mpp.insert(pair<int, string>(4,"dogs"));
+    mpp.insert({11,"Simba"});
     
     mpp[s1.length()] = s1;
     mpp[s2.length()] = s2;
@@ -54,7 +55,7 @@ int main()
 
     }
 
-    map<string, vector<int>>::iterator it = Map.find("Sam");
+    //map<string, vector<int>>::iterator it = Map.find("Sam");
 
     auto it = Map.find("Sam");
 
@@ -73,6 +74,7 @@ int main()
         cout << "Not present" << endl;
     }
     
-    
+    Map.clear();
+    mpp.clear();
     return 0;
 }
