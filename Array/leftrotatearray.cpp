@@ -40,6 +40,30 @@ void leftNRotate(int arr[], int n, int D)
      
 }
 
+void rightNRotate(int arr[], int n, int D)
+{
+    D = D % n;
+    int temparr[D];
+    for (int i = 0; i < D; i++)
+    {
+        //fill temp array to keep the values to add at the end
+        temparr[i] = arr[n-D+i];   
+    }
+
+    //now right shift the values 
+    for (int i = n-1; i >=D ; i--)
+    {
+        arr[i] = arr[i-D];
+    }
+
+    //now add the temp elements to main array
+    for (int i = 0; i < D; i++)
+    {
+        arr[i]=temparr[i];
+    }
+     
+}
+
 void leftNRotateoptimal(int arr[], int n, int D)
 {
     reverse(arr,arr+D);
@@ -56,19 +80,13 @@ int main()
     //for (int i = 0; i < 5; i++)
     //   cout << arr[i] << endl;
 
-    leftNRotateoptimal(arr,5,2);
+    //leftNRotateoptimal(arr,5,2);
+
+    rightNRotate(arr,5,1);
     for (int i = 0; i < 5; i++)
         cout << arr[i] << endl;
 
-//left rotate the array by 1 place
-    int temp = arr[0];
 
-    for (int i = 1; i < 5; i++)
-    {
-        arr[i-1] = arr[i];
-    }
-
-    arr[4]=temp;
 
     //for (int i = 0; i < 5; i++)
         //cout << arr[i] << endl;
