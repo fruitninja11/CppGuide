@@ -6,6 +6,14 @@
 4. std::map is generally used in Dictionay type problems.
 */
 
+/*
+std::unordered_map 
+1. It is implemented using hash table  and internal hash functions
+2. We cannot have complex data strucuturs like, pair, vector as keys since there is no in-built hash function defined for them.
+    It can happens in ordered maps because the keys are put there in comparison basis.
+    standard data types can be keys, like strings, long, int can be put as keys.
+
+*/
 
 #include<iostream>
 #include<map>
