@@ -10,17 +10,17 @@ We can create different binary trees using Tree node definition;
 #include<iostream>
 using namespace std;
 
-class TreeNode
+class Node
 {
 public:
     int value;
-    TreeNode* left;
-    TreeNode* right;
+    Node* left;
+    Node* right;
     
     
-    TreeNode(int val):value(val),left(nullptr),right(nullptr){};
+    Node(int val):value(val),left(nullptr),right(nullptr){};
 
-    ~TreeNode(){
+    ~Node(){
         delete left;
         delete right;
         left = right = nullptr;
@@ -31,13 +31,13 @@ public:
 class BST 
 {
 private:
-    TreeNode *node;
+    Node *node;
 
-    TreeNode* insertNode(TreeNode *node, int value)
+    Node* insertNode(Node *node, int value)
     {
         if(node == nullptr)
         {
-            return new TreeNode(value);    //this is possible since there is a param const in the TreeNode class
+            return new Node(value);    //this is possible since there is a param const in the Node class
         }
 
         if (value < node->value)
@@ -52,7 +52,7 @@ private:
         return node;
     }
 
-    void inorder(TreeNode *node)
+    void inorder(Node *node)
     {
         if(node != nullptr)
         {
@@ -62,7 +62,7 @@ private:
         }
     }
 
-    void preorder(TreeNode *node)
+    void preorder(Node *node)
     {
         if(node != nullptr)
         {
@@ -73,7 +73,7 @@ private:
     }
 
 
-    void postorder(TreeNode *node)
+    void postorder(Node *node)
     {
         if(node != nullptr)
         {
@@ -83,7 +83,7 @@ private:
         }
     }
 
-    void printleftview(TreeNode *node)
+    void printleftview(Node *node)
     {
         if(node != nullptr)
         {
@@ -92,7 +92,7 @@ private:
         }
     }
 
-    void printrightview(TreeNode *node)
+    void printrightview(Node *node)
     {
         if(node != nullptr)
         {
@@ -101,7 +101,7 @@ private:
         }
     }
 
-    bool searchNode(TreeNode *node , int key)
+    bool searchNode(Node *node , int key)
     {
         if(node == nullptr)
             return false;

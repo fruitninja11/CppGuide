@@ -1,10 +1,12 @@
 #include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
 
 template <typename T>
 class Pair
 {
-    private:
+    public:
     T first;
     T second;
 
@@ -21,7 +23,7 @@ class Pair
 int main()
 {
     Pair<int> p1(1,2);
-    Pair<int> p2(10.22,21.45);
+    Pair<double> p2(10.22,21.45);
     Pair<string> p3("Shubham","Meshram");
     Pair<const char*> p4("Shubham","Meshram");
 
@@ -30,5 +32,21 @@ int main()
     p3.display();
     p4.display();
 
+    std::vector<Pair<int>> Vec;
+
+    Vec.push_back(Pair<int>(1,21));
+    Vec.push_back(Pair<int>(1,25));
+    Vec.push_back(Pair<int>(1,12));
+    Vec.push_back(Pair<int>(1,2));
+    Vec.push_back(Pair<int>(1,1));
+    
+    sort(Vec.begin(),Vec.end(),[](const Pair<int> &v1, const Pair<int> &v2){
+        return v1.second < v2.second;
+    });
+
+    for(auto& v : Vec)
+    {
+        v.display();
+    }
     return 0;
 }

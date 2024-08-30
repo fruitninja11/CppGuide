@@ -1,0 +1,17 @@
+Q.Smart pointers and cyclic problems
+reference counter in smart pointers
+
+class A has member as an object of class B and vice versa.
+how will smart pointer cause a problem here.
+
+Q.program to print 100 numbers using multi threading sequentially 
+
+Q.What is the difference between semaphore and mutex when are they used?
+
+Q.What is condition wait and lock releases?
+
+Q.Breaking encapsulation principle of how private function is accessed by base class obj?
+
+Q.how are virtual pointers initialized with the address of vtables?
+
+Q.

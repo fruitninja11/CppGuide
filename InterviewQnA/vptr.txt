@@ -1,0 +1,23 @@
+Q.How the vptr Gets the Address of the vtable? how is vptr initialized?
+
+
+Class Definition and vtable Creation:
+When a class with virtual functions is defined, the compiler automatically creates a vtable for that class. The vtable contains pointers to the class's virtual functions.
+Each derived class that overrides virtual functions has its own vtable, which may have entries pointing to its own overridden functions or to the base class's functions if they are not overridden.
+
+vptr Initialization:
+The vptr is a hidden member of each object of a class with virtual functions. It is not part of the C++ standard, but it is implemented by most compilers (e.g., GCC, Clang, MSVC) to support polymorphism.
+The vptr is initialized by the constructor of the class. When an object of a class with virtual functions is created, the constructor is responsible for setting the vptr to point to the appropriate vtable.
+
+Object Construction and vptr Assignment:
+Base Class Constructor:
+When an object is created, the base class constructor is called first. During this construction, the vptr is set to point to the vtable of the base class.
+Derived Class Constructor:
+If the object is of a derived class, after the base class constructor completes, the derived class constructor runs. The derived class constructor then updates the vptr to point to the derived class's vtable.
+This ensures that when the object is fully constructed, its vptr points to the correct vtable, which includes pointers to the derived class's virtual functions.
+Calling Virtual Functions:
+
+When a virtual function is called on an object, the compiler generates code that:
+Uses the vptr to look up the appropriate function pointer in the vtable.
+Calls the function via this pointer.
+This mechanism allows the correct function to be called at runtime, based on the actual type of the object, rather than the type of the pointer or reference through which the function was called.
